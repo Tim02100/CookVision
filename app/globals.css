@@ -1,0 +1,101 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(90deg, #2f4f4f, #009966); /* Dunkelgrau zu kräftigem Grün */
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s linear infinite;
+}
+
+.navbar-gradient, .footer-gradient {
+  background: linear-gradient(90deg, #2f4f4f, #009966); /* Dunkelgrau zu kräftigem Grün */
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s linear infinite;
+}
+
+/* Definiere die Animation für das Pulsieren */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Definiere die Animation für das Drehen */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stil für den Ladeindikator */
+.animate-spin {
+  animation: spin 0.75s linear infinite;
+}
+
+/* Stil für die Lade-Wrapper */
+.loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Abstand zwischen dem Ladeindikator und dem Text */
+}
+
+/* Stil für den Ladeindikator in die Hintergrundfarbe einfließen lassen */
+.loader {
+  width: 36px;
+  height: 36px;
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Ändere die Farbe hier */
+  border-top: 4px solid rgba(255, 255, 255, 1); /* Vollständig weiße Farbe für den sich drehenden Teil */
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}

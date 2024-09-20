@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
-import ImageUploader from '../components/ImageUploader';
+import { ImageUploader } from '../components/ImageUploader'; // Benannter Export verwendet
 import RecipeDisplay from '../components/RecipeDisplay';
 import { FaRobot, FaQuestionCircle, FaCamera } from 'react-icons/fa';
 
